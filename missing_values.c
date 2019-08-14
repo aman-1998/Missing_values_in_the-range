@@ -48,20 +48,21 @@ int cmpfunc(const void *p,const void *q)
 int binarySearch(int A[],int n,int target)
 {
     int p=0,q,r=n-1;
-    while(1)
+    while(p<=r)
     {
         q=(p+r)/2;
         if(A[q]==target)
             return q;
         else if(A[q]<target)
         {
-            p=q;
+            p=q+1;
             r=n-1;
         }
         else
         {
             p=0;
-            r=q;
+            r=q-1;
         }
     }
+    return -1;
 }
